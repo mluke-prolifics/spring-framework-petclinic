@@ -8,17 +8,14 @@ spec:
   selector:
     matchLabels:
       app: modernapp-workshop
-
   template:
     metadata:
       labels:
         app: modernapp-workshop
-
         version: IMAGE_LABEL
     spec:
       containers:
       - name: modernapp-workshop
-
         image: DOCKER_USERNAME/modernapp-workshop:IMAGE_LABEL
         ports:
         - containerPort: 8080
