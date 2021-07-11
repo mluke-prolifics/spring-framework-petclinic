@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: modernapp-workshop
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: modernapp-workshop
+
+  template:
+    metadata:
+      labels:
+        app: modernapp-workshop
+
+        version: IMAGE_LABEL
+    spec:
+      containers:
+      - name: modernapp-workshop
+
+        image: DOCKER_USERNAME/modernapp-workshop:IMAGE_LABEL
+        ports:
+        - containerPort: 8080
+        resources: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: modernapp-workshop
+
+spec:
+  type: NodePort
+  selector:
+    app: modernapp-workshop
+
+  ports:
+  - port: 80
+    targetPort: 8080
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: modernapp-workshop
+
+spec:
+  host: modernapp-workshop
+-NAME_SPACE.apps.OC_URL
+  to:
+    kind: Service
+    name: modernapp-workshop
+    weight: 100
+  port:
+    targetPort: 8080
+  wildcardPolicy: None
