@@ -31,7 +31,7 @@ jobs:
     - name: Login to OC Cluster
       uses: redhat-actions/oc-login@v1
       with:
-        openshift_server_url: https://api.${{ secrets.OC_URL }}:6443
+        openshift_server_url: ${{ secrets.OC_URL }}
         openshift_token: ${{ secrets.OC_TOKEN }}
         insecure_skip_tls_verify: true
         namespace: ${{ secrets.OC_NAMESPACE }}
