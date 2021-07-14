@@ -1,4 +1,3 @@
-FROM jetty
-ADD ./target/petclinic.war /var/lib/jetty/webapps/ROOT.war
+FROM bitnami/tomcat:9.0
+ADD ./target/petclinic.war /opt/bitnami/tomcat/webapps_default/ROOT.war
 EXPOSE 8080
-USER jetty

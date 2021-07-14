@@ -41,8 +41,7 @@ metadata:
   name: modernapp-workshop
 
 spec:
-  host: modernapp-workshop
--NAME_SPACE.apps.OC_URL
+  host: modernapp-workshop-NAME_SPACE.apps.OC_URL
   to:
     kind: Service
     name: modernapp-workshop
