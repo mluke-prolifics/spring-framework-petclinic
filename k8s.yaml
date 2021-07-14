@@ -39,7 +39,6 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: modernapp-workshop
-
 spec:
   host: modernapp-workshop-NAME_SPACE.apps.OC_URL
   to:
