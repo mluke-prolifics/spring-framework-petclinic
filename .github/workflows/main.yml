@@ -38,5 +38,5 @@ jobs:
         
     - name: Deploy the App in OC Cluster                
       run: |
-        sed -i'' -e 's/DOCKER_USERNAME/${{ secrets.DOCKER_USERNAME }}/g' -e 's/NAME_SPACE/${{ secrets.OC_NAMESPACE }}/g' -e 's/OC_URL/${{ secrets.OC_URL }}/g' -e 's/IMAGE_LABEL/${{ github.sha }}/g' k8s.yaml
+        sed -i'' -e 's/DOCKER_USERNAME/${{ secrets.DOCKER_USERNAME }}/g' -e 's/NAME_SPACE/${{ secrets.OC_NAMESPACE }}/g' -e 's/OC_RT_URL/${{ secrets.OC_RT_URL }}/g' -e 's/IMAGE_LABEL/${{ github.sha }}/g' k8s.yaml
         oc apply -f k8s.yaml            
