@@ -17,6 +17,9 @@ spec:
       containers:
       - name: modernapp-workshop
         image: DOCKER_USERNAME/modernapp-workshop:IMAGE_LABEL
+        env:
+        - name: ALLOW_EMPTY_PASSWORD
+          value: yes
         ports:
         - containerPort: 8080
         resources: {}
