@@ -19,9 +19,9 @@ spec:
         image: DOCKER_USERNAME/modernapp-workshop:IMAGE_LABEL
         env:
           - name: TOMCAT_USERNAME
-          value: "petclinic"
+            value: "petclinic"
           - name: TOMCAT_PASSWORD
-          value: "petclinic"
+            value: "petclinic"
         ports:
         - containerPort: 8080
         resources: {}
