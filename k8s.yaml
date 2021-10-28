@@ -18,8 +18,8 @@ spec:
       - name: modernapp-workshop
         image: DOCKER_USERNAME/modernapp-workshop:IMAGE_LABEL
         env:
-        - name: ALLOW_EMPTY_PASSWORD
-        value: "yes"
+        - name: TOMCAT_PASSWORD
+        value: "petclinic"
         ports:
         - containerPort: 8080
         resources: {}
