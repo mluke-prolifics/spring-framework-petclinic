@@ -467,7 +467,7 @@
         <profile>
             <id>H2</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <db.script>h2</db.script>
@@ -507,6 +507,9 @@
         </profile>
         <profile>
             <id>MySQL</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <db.script>mysql</db.script>
                 <jpa.database>MYSQL</jpa.database>
